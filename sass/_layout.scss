@@ -2,62 +2,118 @@
   display: grid;
 
   // 1:header 2:features 3:story 4:homes 5:gallery 6:footer
-  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-rows: 80vh repeat(6, min-content);
 
   //8rem 1fr repeat(8, 1fr) - 1140/8=142.5 1fr = 1:sidebar 2:space, 3~10:main, 11:space
-  grid-template-columns:[sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    ) [center-end] minmax(6rem, 1fr)
+    [full-end];
 
-  & > * { // develop purpose
+  & > * {
+    // develop purpose
     padding: 40px;
-    font-size: 3rem;;
+    font-size: 3rem;
   }
 }
 
 .sidebar {
   background-color: $color-primary;
+  background-image: linear-gradient(to top, $color-primary-light, $color-primary-dark);
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: all .3s;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
 }
 
 .header {
   background-color: $color-grey-dark-1;
-  grid-column: full-start / col-end 6;
+  grid-column: full-start / full-end;
 }
 
-.realtors {
-  background-color: $color-secondary;
-  grid-column: col-start 7 / full-end;
+.about {
+  background-color: $color-grey-dark-1;
+  grid-column: center-start / center-end;
 }
 
-.features {
+.projects {
   background-color: $color-grey-light-2;
   grid-column: center-start / center-end;
 }
 
-.story {
-  &__pictures {
-    background-color: $color-primary;
+.experiences {
+  background-color: $background;
+  grid-column: center-start / center-end;
+
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: repeat(
+    8,
+    [experience-start] minmax(min-content, 14rem) [experience-end]
+  );
+
+  grid-auto-rows: min-content;
+}
+
+.experience {
+  &__company {
+    background-color: $color-grey-light-1;
+    grid-column: experience-start 1 / experience-end 5;
+  }
+
+  &__role {
+    background-color: $color-grey-dark-1;
+    grid-column: experience-start 6 / experience-end 8;
+  }
+  &__jobs {
+    background-color: $color-grey-dark-2;
+    color: $text-secondary;
+    grid-column: experience-start 1 / experience-end 5;
+  }
+  &__period {
+    background-color: $color-grey-light-2;
+    grid-column: experience-start 1 / experience-end 5;
+  }
+}
+
+.contact {
+  &__form {
+    background-color: $color-secondary;
     grid-column: full-start / col-end 4;
   }
 
-  &__content {
+  &__description {
     background-color: $color-grey-light-1;
     grid-column: col-start 5 / full-end;
   }
 }
 
-.homes {
-  background-color: $color-secondary;
+.resume {
+  background-color: $color-primary;
   grid-column: center-start / center-end;
-}
-
-.gallery {
-  background-color: $color-grey-dark-1;
-  grid-column: full-start / full-end;
 }
 
 .footer {
   background-color: $color-grey-dark-2;
   color: $text-secondary;
   grid-column: full-start / full-end;
+}
+
+.realtors {
+  background-color: $color-secondary;
+  grid-column: col-start 6 / center-end;
 }

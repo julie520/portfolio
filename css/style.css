@@ -20,7 +20,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-rows: 80vh repeat(6, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
   .container > * {
     padding: 40px;
@@ -28,38 +28,148 @@ body {
 
 .sidebar {
   background-color: #a6e22e;
+  background-image: linear-gradient(to top, #dbff66, #72b000);
   grid-column: sidebar-start / sidebar-end;
-  grid-row: 1 / -1; }
+  grid-row: 1 / -1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: all .3s; }
+  @media only screen and (max-width: 62.5em) {
+    .sidebar {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      justify-content: flex-end;
+      align-items: center; } }
 
 .header {
   background-color: #757575;
-  grid-column: full-start / col-end 6; }
+  grid-column: full-start / full-end; }
 
-.realtors {
-  background-color: #e5da74;
-  grid-column: col-start 7 / full-end; }
+.about {
+  background-color: #757575;
+  grid-column: center-start / center-end; }
 
-.features {
+.projects {
   background-color: #bdbdbd;
   grid-column: center-start / center-end; }
 
-.story__pictures {
-  background-color: #a6e22e;
+.experiences {
+  background-color: #f5f5f5;
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: repeat(8, [experience-start] minmax(min-content, 14rem) [experience-end]);
+  grid-auto-rows: min-content; }
+
+.experience__company {
+  background-color: #eeeeee;
+  grid-column: experience-start 1 / experience-end 5; }
+
+.experience__role {
+  background-color: #757575;
+  grid-column: experience-start 6 / experience-end 8; }
+
+.experience__jobs {
+  background-color: #212121;
+  color: rgba(255, 255, 255, 0.87);
+  grid-column: experience-start 1 / experience-end 5; }
+
+.experience__period {
+  background-color: #bdbdbd;
+  grid-column: experience-start 1 / experience-end 5; }
+
+.contact__form {
+  background-color: #e5da74;
   grid-column: full-start / col-end 4; }
 
-.story__content {
+.contact__description {
   background-color: #eeeeee;
   grid-column: col-start 5 / full-end; }
 
-.homes {
-  background-color: #e5da74;
+.resume {
+  background-color: #a6e22e;
   grid-column: center-start / center-end; }
-
-.gallery {
-  background-color: #757575;
-  grid-column: full-start / full-end; }
 
 .footer {
   background-color: #212121;
   color: rgba(255, 255, 255, 0.87);
   grid-column: full-start / full-end; }
+
+.realtors {
+  background-color: #e5da74;
+  grid-column: col-start 6 / center-end; }
+
+.menu-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .menu-icon__line {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.87);
+    transition: all 0.8s; }
+
+.nav-list {
+  text-align: left;
+  position: absolute;
+  opacity: 0;
+  z-index: 100; }
+
+.nav-item {
+  list-style: none;
+  margin: 2.5rem; }
+
+.nav-link {
+  text-decoration: none;
+  font-size: 2.2rem;
+  color: #eee;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 3px 0; }
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #e5da74;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s; }
+
+.nav-link::after {
+  bottom: 0;
+  transform-origin: left; }
+
+.nav-link::before {
+  top: 0;
+  transform-origin: right; }
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  transform: scaleX(1); }
+
+.change {
+  position: fixed;
+  width: 30rem;
+  height: 100%;
+  border-radius: 0 30% 30% 0 / 0 40% 60% 0;
+  left: 0; }
+  .change .menu-icon__line-1 {
+    transform: rotateZ(-405deg) translate(-0.9rem, 0.7rem); }
+  .change .menu-icon__line-2 {
+    opacity: 0; }
+  .change .menu-icon__line-3 {
+    transform: rotateZ(405deg) translate(-0.9rem, -0.7rem); }
+  .change .nav-list {
+    opacity: 1; }
