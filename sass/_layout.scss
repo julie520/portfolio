@@ -7,11 +7,25 @@
   //8rem 1fr repeat(8, 1fr) - 1140/8=142.5 1fr = 1:sidebar 2:space, 3~10:main, 11:space
   grid-template-columns:
     [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
-    [center-start] repeat(
-      8,
-      [col-start] minmax(min-content, 14rem) [col-end]
-    ) [center-end] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr)
     [full-end];
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end] minmax(6rem, 1fr)
+      [full-end]; //1140/8=142.5
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(
+        3,
+        min-content
+      );
+  }
 
   & > * {
     // develop purpose
@@ -22,22 +36,25 @@
 
 .sidebar {
   background-color: $color-primary;
-  background-image: linear-gradient(to top, $color-primary-light, $color-primary-dark);
+  background-image: linear-gradient(
+    to top,
+    $color-primary-light,
+    $color-primary-dark
+  );
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
 
   display: flex;
   justify-content: center;
   position: relative;
-  transition: all .3s;
+  transition: all 0.3s;
 
   @media only screen and (max-width: $bp-large) {
     grid-column: 1 / -1;
-    grid-row: 1 / 2;
+    grid-row: 1 / 1;
     justify-content: flex-end;
     align-items: center;
   }
-
 }
 
 .header {
