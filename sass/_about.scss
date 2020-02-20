@@ -1,0 +1,25 @@
+.about {
+  ul {
+    
+
+    li {
+      list-style: none;
+    }
+  }  
+}
+
+.skill {
+
+  display: flex;
+  width: 30rem;
+  
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+
+  &__desc {
+
+  }
+}

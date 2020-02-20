@@ -2,17 +2,18 @@
   display: grid;
 
   // 1:header 2:features 3:story 4:homes 5:gallery 6:footer
-  grid-template-rows: 80vh repeat(6, min-content);
+  // grid-template-rows: 80vh repeat(6, min-content);
+  grid-template-rows: 60vh repeat(6, min-content);
 
   //8rem 1fr repeat(8, 1fr) - 1140/8=142.5 1fr = 1:sidebar 2:space, 3~10:main, 11:space
   grid-template-columns:
-    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [sidebar-start] 10rem [sidebar-end full-start] minmax(4rem, 1fr)
     [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end] minmax(6rem, 1fr)
     [full-end];
 
   @media only screen and (max-width: $bp-large) {
-    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
     grid-template-columns:
       [full-start] minmax(6rem, 1fr)
       [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
@@ -21,26 +22,21 @@
   }
 
   @media only screen and (max-width: $bp-medium) {
-    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(
+    grid-template-rows: 8rem calc(100vh - 6rem) min-content min-content min-content repeat(
         3,
         min-content
       );
   }
-
-  & > * {
-    // develop purpose
-    padding: 40px;
-    font-size: 3rem;
-  }
 }
 
 .sidebar {
-  background-color: $color-primary;
   background-image: linear-gradient(
     to top,
     $color-primary-light,
     $color-primary-dark
   );
+  box-shadow: $box-shadow-3;
+
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
 
@@ -51,25 +47,50 @@
 
   @media only screen and (max-width: $bp-large) {
     grid-column: 1 / -1;
-    grid-row: 1 / 1;
+    grid-row: 1 / 2;
     justify-content: flex-end;
     align-items: center;
   }
 }
 
 .header {
-  background-color: $color-grey-dark-1;
   grid-column: full-start / full-end;
+  grid-row: 1 / 2;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-row: 2 / 3;
+  }
+
+  position: relative;
 }
 
 .about {
-  background-color: $color-grey-dark-1;
   grid-column: center-start / center-end;
+  grid-row: 2 / 3;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-row: 3 / 4;
+  }
+
+  h3 {
+    margin: 3rem 0;
+  }
+
+  p {
+    margin: 2.5rem auto;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    letter-spacing: 1.8;
+  }
 }
 
 .projects {
   background-color: $color-grey-light-2;
   grid-column: center-start / center-end;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-row: 4 / 5;
+  }
 }
 
 .experiences {
@@ -84,6 +105,10 @@
   );
 
   grid-auto-rows: min-content;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-row: 5 / 6;
+  }
 }
 
 .experience {
@@ -108,26 +133,41 @@
 }
 
 .contact {
+ 
   &__form {
     background-color: $color-secondary;
     grid-column: full-start / col-end 4;
+    @media only screen and (max-width: $bp-large) {
+      grid-row: 6 / 7;
+    }
   }
 
   &__description {
     background-color: $color-grey-light-1;
     grid-column: col-start 5 / full-end;
+    @media only screen and (max-width: $bp-large) {
+      grid-row: 6 / 7;
+    }
   }
 }
 
 .resume {
   background-color: $color-primary;
   grid-column: center-start / center-end;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-row: 7 / 8;
+  }
 }
 
 .footer {
   background-color: $color-grey-dark-2;
   color: $text-secondary;
   grid-column: full-start / full-end;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-row: 8 / -1;
+  }
 }
 
 .realtors {
