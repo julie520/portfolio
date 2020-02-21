@@ -1,0 +1,67 @@
+.experiences {
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: repeat(
+    auto-fit,
+    [experience-start] minmax(min-content, 14rem) [experience-end]
+  );
+
+  grid-auto-rows: min-content;
+
+}
+
+.experience {
+
+  &__company {
+    grid-column: experience-start 1 / experience-end 5;
+    margin: 1.5rem 0;
+
+    figure {
+      display: flex;      
+      max-width: 50%;      
+      align-items: center;
+    }
+
+    &-logo {
+      height:1.2rem;
+      width: auto;
+    }
+
+    &-name {
+      font-size: 1.6rem;
+      padding: 0 2rem;
+    }
+  }
+
+  &__role {
+    grid-column: experience-start 6 / experience-end 8;
+    font-size: 1.6rem;
+    text-align: right;
+  }
+
+  &__jobs {
+    grid-column: experience-start 1 / experience-end 5;    
+
+    &__title {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__job {
+    list-style-type: circle;   
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-left: 3rem;
+    margin-top: 1rem;
+
+  }
+
+  &__period {
+    grid-column: experience-start 1 / experience-end 8;
+    font-size: 1.2rem;
+    margin-top: .5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid black;
+    margin-bottom: .5rem;
+  }
+}

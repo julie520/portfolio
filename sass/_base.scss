@@ -1,4 +1,4 @@
-$color-primary: #a6e22e;
+$color-primary: #333;
 $color-primary-light: #dbff66;
 $color-primary-dark: #72b000;
 
@@ -6,28 +6,36 @@ $color-secondary: #ff984d;
 $color-secondary-light: #ffc97c;
 $color-secondary-dark: #c7691e;
 
-$text-primary: rgba(0, 0, 0, 0.87);
-$text-secondary:rgba(255, 255, 255, 0.87);
+$text-primary: #6e6e6e;
+$text-secondary: #aaa;
 $text-disabled: rgba(0, 0, 0, 0.38);
 
 $color-black: rgba(0, 0, 0, 0.87);
-$color-grey-light-1:#eeeeee;
-$color-grey-light-2:#bdbdbd;
-$color-grey-dark-1:#757575;
-$color-grey-dark-2:#212121;
+$color-grey-light-1: rgb(238, 238, 238);
+$color-grey-light-2: #ddd;
+$color-grey-dark-1: #757575;
+$color-grey-dark-2: #212121;
+
+$color-white: #fff;
 
 $box-shadow-0: "none";
-$box-shadow-1: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
-$box-shadow-2: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
-$box-shadow-3:rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+$box-shadow-1: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+  rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+$box-shadow-2: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+  rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+$box-shadow-3: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px,
+  rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+$box-shadow-light-3: rgba(255, 255, 255, 0.2) 0px 3px 3px -2px,
+  rgba(255, 255, 255, 0.14) 0px 3px 4px 0px, rgba(255, 255, 255, 0.12) 0px 1px 8px 0px;
 
 $border: rgba(0, 0, 0, 0.87);
 $background: #f5f5f5;
+$background-color: #333;
 
 $line: 1px solid $color-grey-light-2;
 $default-font-size: 1.6rem;
 
-$font-primary: 'Open Sans', sans-serif;
+$font-primary: "Open Sans", sans-serif;
 
 // RESPONSIVE BREAKPOINTS
 $bp-largest: 75em; // 1200/16px=75
@@ -48,7 +56,7 @@ html {
   font-size: 62.5%; // 1rem = 10px, 10/16px = 62.5%
 
   @media only screen and (max-width: $bp-largest) {
-    font-size: 50%;
+    font-size: 56.25%;
   }
 }
 
@@ -62,20 +70,49 @@ body {
 h1 {
   font-size: 4.5rem;
   font-weight: 300;
-  letter-spacing: .5rem;
-  text-transform: uppercase;  
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
 }
 
 h3 {
-  font-size: 2.4rem;
+  font-size: 3.2rem;
   font-weight: 400;
-  text-transform: uppercase;  
+  text-transform: uppercase;
+  margin: 2rem 0 1rem 0;
 
   @media only screen and (max-width: $bp-large) {
-    font-size: 2.0rem;
+    font-size: 3rem;
   }
 
-  @media only screen and (max-width: $bp-large) {
-    font-size:1.8rem;
+  @media only screen and (max-width: $bp-small) {
+    font-size: 2.6rem;
   }
+}
+
+h6 {
+  font-size: 2rem;
+  font-weight: 400;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.7rem;
+  }
+}
+
+p {
+  font-size: $default-font-size;
+  // margin: 2.5rem auto;
+}
+
+.mb-large {
+  margin-bottom: 2rem;
+}
+.mb-medium {
+  margin-bottom: 1.6rem;
+}
+.mb-small {
+  margin-bottom: 0.5rem;
 }

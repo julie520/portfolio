@@ -1,0 +1,29 @@
+.description {
+  
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1.5rem;
+  }
+
+  p {
+    margin-left: 4.5rem;
+  }
+}
+
+.description:not(:last-child) {
+  padding: 3.2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 1.5rem 3.2rem;
+  }
+}
+
+.description:last-child {
+  padding: 0 3.2rem 1rem 3.2rem;
+}

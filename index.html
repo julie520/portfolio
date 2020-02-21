@@ -45,13 +45,15 @@
           <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
         </ul>
       </div>
+
       <header class="header">
         <div class="video-container">
-          <video class="="video-container__content autoplay muted loop>
+          <!-- <video class="="video-container__content autoplay muted loop>
             <source src="/img/video/Workaholic.mp4" type="video/mp4"/>
             <source src="/img/video/Workaholic.webm" type="video/webm"/>
             Your browser does not support the video tag.
-          </video>
+          </video> -->
+          <video src="/img/video/Workaholic.mp4" poster="/img/video/Workaholic.jpg" class="video-container__content" autoplay muted loop></video>
         </div>      
 
         <div class="video-desc">
@@ -61,48 +63,161 @@
 
       <section class="about" id="about">
        <h3 class="h3">About</h3>
-       <p class="paragraph">With more than 10 years in full-stack web development experiences, especially in back-end complex data management, I am confident I will be an excellent fit for [this position]. Also, recent tech stacks especially React, Nodejs and modern front-end design frameworks, I can fully utilise these skills to produce customer focused user-friendly application. </p>
+       <p class="paragraph mb-large">With more than 10 years in full-stack web development experiences, especially in back-end complex data management, I am confident I will be an excellent fit for [this position]. Also, recent tech stacks especially React, Nodejs and modern front-end design frameworks, I can fully utilise these skills to produce customer focused user-friendly application. </p>
        <div class="skills">
-         <ul>
-           <li class="skill">
-             <svg class="skill__icon">
-               <use xlink:href="/img/icon/symbol-defs.svg#icon-javascript"></use>
-               <span class="skill__desc">Javascript, ECMAScript 6</span>
-             </svg>
-           </li>
+         <ul class="skill">
+           <li class="skill__item">
+            <svg class="skill__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-react"></use>
+            </svg>
+            <h6 class="skill__desc">React JS, Redux</h6>
+          </li>
+          <li class="skill__item">
+            <svg class="skill__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-mongodb"></use>
+            </svg>
+            <h6 class="skill__desc">Node.js, Express.js, MongoDB</h6>
+          </li>
+          <li class="skill__item">
+            <svg class="skill__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-css31"></use>              
+            </svg>
+            <h6 class="skill__desc">CSS, SASS, Flexbox, CSS Grid, Responsive Web Design</h6>
+          </li>
+          <li class="skill__item">
+            <svg class="skill__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-javascript"></use>               
+            </svg>
+            <h6 class="skill__desc">Javascript, ECMAScript 6</h6>
+          </li>        
+          <li class="skill__item">
+            <svg class="skill__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-html5"></use>              
+            </svg>
+            <h6 class="skill__desc">HTML5</h6>
+          </li>            
+          <li class="skill__item">
+            <svg class="skill__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-csharp"></use>              
+            </svg>
+            <h6 class="skill__desc">C# .NET, ASP .Net Core, MSSQL</h6>
+          </li>
          </ul>
        </div>
       </section>
       <section class="projects" id="projects">
-        Projects
+        <h3 class="h3">Projects</h3>
+        <div class="project">
+          <div class="project__item">
+            <figure class="project__box">      
+              <figcaption class="project__caption mb-medium">Meetup ape</figcaption>
+              <img src="/img/meetup-ape-small.png" alt="Meetup ape" class="project__img mb-medium">      
+            </figure>
+            <a href="#popup" class="btn btn__link">View Project</a>
+          </div>
+          <div class="project__item">
+            <figure class="project__box">      
+              <figcaption class="project__caption mb-medium">Meetup ape</figcaption>
+              <img src="/img/meetup-ape-small.png" alt="Meetup ape" class="project__img mb-medium">      
+            </figure>
+            <a href="#popup" class="btn btn__link">View Project</a>
+          </div>
+          <div class="project__item">
+            <figure class="project__box">      
+              <figcaption class="project__caption mb-medium">Meetup ape</figcaption>
+              <img src="/img/meetup-ape-small.png" alt="Meetup ape" class="project__img mb-medium">      
+            </figure>
+            <a href="#popup" class="btn btn__link">View Project</a>
+          </div>                  
+        </div>      
       </section>
 
       <div class="experiences" id="experiences">
-        <div class="experience__company">Compnay</div>
-        <div class="experience__role">Role</div>
-        <div class="experience__jobs">job list</div>
-        <div class="experience__period">Period</div>
-
-        <div class="experience__company">Compnay</div>
-        <div class="experience__role">Role</div>
-        <div class="experience__jobs">job list</div>
-        <div class="experience__period">Period</div>
+        <h3 class="h3">Experiences</h3>
+        <div class="experience__company">
+          <figure>
+            <img src="/img/logo-ecne.png" alt="ECNE logo" class="experience__company-logo">
+            <figcaption class="experience__company-name">Ecnesoft Pty</figcaption>
+          </figure>
+        </div>
+        <div class="experience__role">Full-Stack Software Developer</div>
+        <div class="experience__jobs">
+          <span class="experience__jobs__title">Integrated point of sales system provider with web-based franchise solutions</span>
+          <ul class="experience__job">
+            <li class="experience__job__item">Implement franchise back-end APIs and front-end development and apply design principles</li>
+            <li class="experience__job__item">Back-end business modules and stored procedure development</li>
+            <li class="experience__job__item">Optimizing applications for maximum performance</li>
+          </ul>
+        </div>
+        <div class="experience__period">May 2017 –Dec2018</div>
       </div>
 
       <div class="contact__form" id-"contact">
-        Contact form
+        <h3>Contact Me</h3>
+        <form action="#" class="form">          
+          <div class="form__group">
+            <input type="text" class="form__input" placeholder="Full name" name="name" id="name" required />
+            <label for="name" class="form__label">Full name</label>
+          </div>
+          <div class="form__group">
+            <input type="email" class="form__input" placeholder="Email address" name="email" id="email" required />
+            <label for="email" class="form__label">Email address</label>
+          </div>
+          <div class="form__group">
+            <textarea type="text" class="form__input" placeholder="Leave a messag" name="message" id="message" rows="4" cols="50" required></textarea>
+            <label for="name" class="message"Leave a message</label>
+          </div>
+          <div class="form__group">
+            <button class="btn btn--submit">Send it</button>
+          </div>
+        </form>
       </div>
 
       <div class="contact__description">
-        Contact description
+        <div class="description">
+          <div class="description__title">
+            <svg class="description__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-mobile"></use>
+            </svg>
+            <h6 class="description__desc">Mobile Number</h6>
+          </div>
+          <p>0426 459 986</p>
+        </div>
+        
+        <div class="description">
+          <div class="description__title">
+            <svg class="description__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-envelop"></use>
+            </svg>
+            <h6 class="description__desc">Email Address</h6>
+          </div>
+          <p>julie.kim520@gmail.com</p>
+        </div>
+
+        <div class="description">
+          <div class="description__title">
+            <svg class="description__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-location"></use>
+            </svg>
+            <h6 class="description__desc">My Location</h6>
+          </div>
+          <p>14 David st, Richmond 3121, Vic</p>
+        </div>
+
+        <div class="description" id="resume">
+          <div class="description__title">
+            <svg class="description__icon">
+              <use xlink:href="/img/icon/symbol-defs.svg#icon-file-pdf"></use>
+            </svg>
+            <a href="#" class="btn btn--link">Resume download</a>
+          </div>
+        </div>
+
       </div>
-
-      <section class="resume" id="resume">
-        Resume
-      </section>
-
       <footer class="footer">
-        Footer
+        <p class="copyright">
+          &copy; Copyright 2020 by JulieWith.me
+        </p>
       </footer>
     </div>
   </body>

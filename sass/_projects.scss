@@ -1,0 +1,46 @@
+.projects {
+   
+}
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 1rem;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: $bp-large) {
+    // grid-gap: .1rem;
+  }
+  
+  &__item {
+    min-width: 30rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    background-color: $color-primary;
+    border-radius: 6px;
+  }
+
+  &__box {
+    text-align: center;
+  }
+
+  &__caption {
+    font-size: $default-font-size;
+    font-weight: 600;
+    border-bottom: 1px solid $text-secondary;
+    color:$text-secondary;
+  }
+
+  &__img {
+    max-width: 30rem;
+    width: 90%;
+    border-radius: 6px;
+    box-shadow: 5px 5px 0px 0px rgba(221,221,221,1);
+  }
+ 
+}
