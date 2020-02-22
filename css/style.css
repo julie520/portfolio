@@ -114,7 +114,7 @@ p {
       grid-row: 5 / 6; } }
 
 .contact__form {
-  background-image: linear-gradient(to right bottom, #006200, #5dc250);
+  background-image: linear-gradient(to right bottom, #72b000, #dbff66);
   grid-column: full-start / col-end 4;
   text-align: center;
   border-radius: 3px;
@@ -190,9 +190,9 @@ p {
     .form__input:focus {
       outline: none;
       box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
-      border-bottom: 3px solid #006200; }
+      border-bottom: 3px solid #72b000; }
     .form__input:focus:invalid {
-      border-bottom: 3px solid #ab57cb; }
+      border-bottom: 3px solid #c7691e; }
     .form__input::-webkit-input-placeholder {
       color: #212121; }
   .form__label {
@@ -276,7 +276,7 @@ p {
   content: "";
   width: 100%;
   height: 2px;
-  background-color: #006200;
+  background-color: #72b000;
   position: absolute;
   left: 0;
   transform: scaleX(0);
@@ -320,7 +320,8 @@ p {
   position: absolute;
   width: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: -10; }
   .video-container__content {
     object-position: 50% 50%;
     object-fit: cover;
@@ -378,7 +379,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #239120;
+    background-color: #333;
     border-radius: 6px; }
   .project__box {
     text-align: center; }
@@ -446,7 +447,7 @@ p {
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 1.5rem;
-  fill: #006200; }
+  fill: #72b000; }
 
 .description p {
   margin-left: 4.5rem; }
