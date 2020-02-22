@@ -88,7 +88,7 @@
 .contact {
  
   &__form {
-    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    background-image: linear-gradient(to right bottom, $color-primary-dark, $color-primary-light);
     grid-column: full-start / col-end 4;
     text-align: center;
     border-radius: 3px;
